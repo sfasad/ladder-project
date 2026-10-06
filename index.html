@@ -24,6 +24,1030 @@
       --max: 1160px;
     }
 
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 8%, rgba(97, 197, 181, .13), transparent 28rem),
+        radial-gradient(circle at 10% 18%, rgba(122, 167, 255, .1), transparent 24rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+
+    a { color: inherit; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .98rem;
+      font-weight: 760;
+      letter-spacing: .09em;
+    }
+    .brand-mark {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border: 1px solid rgba(244, 162, 97, .72);
+      border-radius: 9px;
+      color: var(--accent);
+      font-size: .72rem;
+      letter-spacing: -.05em;
+    }
+    .nav { display: flex; gap: 25px; }
+    .nav a {
+      color: var(--muted);
+      font-size: .85rem;
+      text-decoration: none;
+    }
+    .nav a:hover, .nav a:focus-visible { color: var(--ink); }
+
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 760;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(244, 162, 97, .1);
+      content: "";
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+      gap: 78px;
+      align-items: center;
+      min-height: 590px;
+      padding: 82px 0 86px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 730px;
+      margin: 19px 0 25px;
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      line-height: .94;
+      letter-spacing: -.075em;
+    }
+    .hero h1 span { color: var(--accent); }
+    .lede {
+      max-width: 660px;
+      color: #c1cfdb;
+      font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+      line-height: 1.65;
+    }
+    .anonymous-note {
+      display: inline-flex;
+      max-width: 600px;
+      margin-top: 25px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+
+    .project-intro { padding: 0 0 95px; }
+    .intro-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr);
+      gap: 28px;
+      align-items: center;
+      padding: 23px;
+      border: 1px solid var(--line-strong);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(16, 34, 56, .9), rgba(9, 22, 37, .82));
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .18);
+    }
+    .intro-media { overflow: hidden; border: 1px solid var(--line); border-radius: 13px; background: #081321; }
+    .intro-media video { display: block; width: 100%; aspect-ratio: 1280 / 720; object-fit: cover; background: #081321; }
+    .intro-copy .card-kicker { color: var(--accent-2); font-size: .74rem; font-weight: 760; letter-spacing: .13em; text-transform: uppercase; }
+    .intro-copy h2 { margin: 11px 0 15px; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.06; letter-spacing: -.055em; }
+    .intro-copy p { margin-bottom: 17px; color: var(--muted); font-size: .95rem; }
+    .intro-copy ul { display: grid; gap: 8px; margin: 0; padding-left: 19px; color: #c1cfdb; font-size: .88rem; }
+    .intro-copy li::marker { color: var(--accent); }
+    .intro-duration { margin-top: 21px; color: var(--dim); font-size: .75rem; letter-spacing: .05em; }
+    @media (max-width: 900px) { .intro-card { grid-template-columns: 1fr; } }
+    .snapshot {
+      position: relative;
+      overflow: hidden;
+      padding: 25px;
+      border: 1px solid var(--line-strong);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(16, 34, 56, .93), rgba(9, 22, 37, .95));
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .25);
+    }
+    .snapshot::after {
+      position: absolute;
+      right: -82px;
+      bottom: -100px;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(97, 197, 181, .25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 25px rgba(97, 197, 181, .04), 0 0 0 50px rgba(97, 197, 181, .03);
+      content: "";
+    }
+    .snapshot-head {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 19px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .snapshot-head strong { color: var(--accent-2); font-weight: 700; }
+    .snapshot h2 {
+      margin: 26px 0 8px;
+      font-size: 1.55rem;
+      letter-spacing: -.03em;
+    }
+    .snapshot p { margin-bottom: 25px; color: var(--muted); font-size: .93rem; }
+    .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .metric {
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: rgba(7, 17, 31, .42);
+    }
+    .metric strong { display: block; color: var(--ink); font-size: 1.46rem; letter-spacing: -.04em; }
+    .metric span { color: var(--dim); font-size: .76rem; }
+
+
+    section { padding: 95px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: minmax(220px, .75fr) minmax(0, 1.25fr); gap: 50px; margin-bottom: 48px; }
+    h2 { margin-bottom: 0; font-size: clamp(2rem, 4vw, 3.45rem); line-height: 1.02; letter-spacing: -.065em; }
+    .section-intro { max-width: 620px; margin: 5px 0 0; color: var(--muted); font-size: 1.04rem; }
+
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .step {
+      position: relative;
+      min-height: 225px;
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(13, 26, 43, .78);
+    }
+    .step:not(:last-child)::after {
+      position: absolute;
+      top: 31px;
+      right: -15px;
+      z-index: 1;
+      color: var(--accent);
+      content: "→";
+      font-size: 1.2rem;
+    }
+    .step-no { color: var(--accent); font: 700 .75rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .step h3 { margin: 31px 0 12px; font-size: 1.02rem; line-height: 1.2; }
+    .step p { margin-bottom: 0; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .info-card {
+      min-height: 255px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: linear-gradient(145deg, rgba(13, 26, 43, .9), rgba(13, 26, 43, .55));
+    }
+    .info-card .card-kicker { color: var(--accent-2); font-size: .74rem; font-weight: 760; letter-spacing: .13em; text-transform: uppercase; }
+    .info-card h3 { margin: 10px 0 13px; font-size: 1.35rem; letter-spacing: -.035em; }
+    .info-card p { color: var(--muted); font-size: .95rem; }
+    .info-card ul { display: grid; gap: 9px; margin: 18px 0 0; padding-left: 19px; color: #c1cfdb; font-size: .9rem; }
+    .info-card li::marker { color: var(--accent); }
+
+
+    .result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .result-card { padding: 25px; border: 1px solid var(--line); border-radius: 15px; background: rgba(13, 26, 43, .72); }
+    .result-card h3 { margin-bottom: 5px; font-size: 1.14rem; }
+    .result-card p { margin-bottom: 22px; color: var(--muted); font-size: .87rem; }
+    .demo-intro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: -15px 0 38px; }
+    .demo-stat { padding: 16px 18px; border: 1px solid var(--line); border-radius: 11px; background: rgba(13, 26, 43, .62); }
+    .demo-stat strong { display: block; color: var(--accent); font-size: 1.45rem; letter-spacing: -.04em; }
+    .demo-stat span { color: var(--dim); font-size: .76rem; }
+    .demo-groups { display: grid; gap: 42px; }
+    .demo-group-heading { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 35px; align-items: end; margin-bottom: 17px; }
+    .demo-group-heading .eyebrow { color: var(--accent-2); font-size: .68rem; }
+    .demo-group-heading .eyebrow::before { background: var(--accent-2); box-shadow: 0 0 0 5px rgba(97, 197, 181, .1); }
+    .demo-group-heading h3 { margin: 8px 0 0; font-size: 1.35rem; letter-spacing: -.035em; }
+    .demo-group-heading p { max-width: 560px; margin: 0; color: var(--muted); font-size: .9rem; }
+    .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .demo-card { overflow: hidden; border: 1px solid var(--line); border-radius: 13px; background: rgba(13, 26, 43, .72); transition: border-color .2s ease, transform .2s ease; }
+    .demo-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+    .demo-media { aspect-ratio: 640 / 368; background: #081321; }
+    .demo-card video { display: block; width: 100%; height: 100%; object-fit: cover; background: #081321; }
+    .demo-card-body { padding: 14px 15px 16px; }
+    .demo-meta { display: flex; justify-content: space-between; gap: 8px; color: var(--dim); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; }
+    .demo-tag { color: var(--accent-2); }
+    .demo-card h3 { margin: 9px 0 0; font-size: .98rem; line-height: 1.2; letter-spacing: -.015em; }
+    .demo-note { margin: 24px 0 0; color: var(--dim); font-size: .78rem; }
+    .bar-row { display: grid; grid-template-columns: 88px 1fr 47px; gap: 10px; align-items: center; margin: 13px 0; color: #c1cfdb; font-size: .79rem; }
+    .track { height: 9px; overflow: hidden; border-radius: 20px; background: #1a2d42; }
+    .fill { height: 100%; border-radius: inherit; background: var(--accent); }
+    .fill.base { background: #49647f; }
+    .bar-row strong { color: var(--ink); font-size: .8rem; text-align: right; }
+    .legend { display: flex; gap: 18px; margin-top: 19px; color: var(--dim); font-size: .74rem; }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
+    .legend i.base { background: #49647f; }
+
+
+    .policy-table-wrap { overflow-x: auto; margin-top: 20px; border: 1px solid var(--line); border-radius: 15px; }
+    table { width: 100%; min-width: 650px; border-collapse: collapse; background: rgba(13, 26, 43, .65); }
+    th, td { padding: 14px 17px; border-bottom: 1px solid var(--line); text-align: left; }
+    th { color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    td { color: #d7e1e9; font-size: .9rem; }
+    tr:last-child td { border-bottom: 0; }
+    td strong { color: var(--good); font-weight: 700; }
+    .fineprint { margin: 15px 0 0; color: var(--dim); font-size: .78rem; }
+
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+    }
+    .detail {
+      padding: 20px;
+      border-left: 2px solid var(--accent-2);
+      background: rgba(13, 26, 43, .55);
+    }
+    .detail strong { display: block; margin-bottom: 7px; font-size: .89rem; }
+    .detail span { color: var(--muted); font-size: .84rem; }
+    .closing {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(230px, .8fr);
+      gap: 50px;
+      align-items: end;
+    }
+    .closing p { max-width: 690px; margin: 22px 0 0; color: var(--muted); font-size: 1.03rem; }
+    .release-note { padding: 21px; border: 1px solid rgba(181, 228, 140, .3); border-radius: 12px; background: rgba(181, 228, 140, .05); color: #c7e5ae; font-size: .88rem; }
+    footer { padding: 30px 0 45px; border-top: 1px solid var(--line); color: var(--dim); font-size: .78rem; }
+    footer .shell { display: flex; justify-content: space-between; gap: 20px; }
+
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 38px; padding: 65px 0 70px; }
+      .snapshot { max-width: 620px; }
+      .pipeline { grid-template-columns: repeat(2, 1fr); }
+      .step:not(:last-child)::after { display: none; }
+      .section-heading, .closing { grid-template-columns: 1fr; gap: 17px; }
+      .details { grid-template-columns: 1fr 1fr; }
+      .demo-grid { grid-template-columns: repeat(2, 1fr); }
+      .demo-group-heading { grid-template-columns: 1fr; gap: 8px; align-items: start; }
+    }
+    @media (max-width: 620px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .topbar { min-height: 68px; }
+      .nav { gap: 12px; }
+      .nav a:nth-child(2), .nav a:nth-child(5) { display: none; }
+      h1 { font-size: clamp(3.2rem, 18vw, 5.6rem); }
+      section { padding: 68px 0; }
+      .pipeline, .two-col, .result-grid, .details, .demo-grid { grid-template-columns: 1fr; }
+      .demo-intro { grid-template-columns: 1fr; margin-top: -8px; }
+      .snapshot { padding: 20px; }
+      footer .shell { display: grid; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#top" aria-label="LADDER home"><span class="brand-mark">L</span> LADDER</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#demonstrations">Demonstrations</a>
+      <a href="#results">Results</a>
+      <a href="#details">Details</a>
+      <a href="#project-intro">Intro video</a>
+    </nav>
+  </header>
+
+
+  <main id="top">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Anonymous project page · ICLR 2027</div>
+        <h1 id="hero-title">Language &amp;<br /><span>Affordance</span>-Driven<br />Demonstrations.</h1>
+        <p class="lede">LADDER is an automated pipeline that turns natural-language instructions into verified robot procedures, executable trajectories, and training demonstrations in simulation.</p>
+        <div class="anonymous-note">This page is intentionally anonymized for double-blind review.</div>
+      </div>
+      <aside class="snapshot" aria-label="Method snapshot">
+        <div class="snapshot-head"><span>Method snapshot</span><strong>simulation-first</strong></div>
+        <h2>From language to data</h2>
+        <p>Parameterized manipulation knowledge, structured task decomposition, affordance grounding, and collision-aware execution work as one collection loop.</p>
+        <div class="metric-grid">
+          <div class="metric"><strong>4,584</strong><span>assets in the knowledge base</span></div>
+          <div class="metric"><strong>23k</strong><span>parameterized affordances</span></div>
+          <div class="metric"><strong>100</strong><span>benchmark tasks evaluated</span></div>
+          <div class="metric"><strong>94.2%</strong><span>rigid-body collection rate</span></div>
+        </div>
+      </aside>
+    </section>
+
+
+    <section id="project-intro" class="project-intro" aria-labelledby="project-intro-title">
+      <div class="shell">
+        <div class="intro-card">
+          <div class="intro-media">
+            <video controls preload="metadata" playsinline poster="videos/ladder_project_intro.jpg" aria-label="LADDER project introduction video">
+              <source src="videos/LADDER_project_intro_revised.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="intro-copy">
+            <div class="card-kicker">Project introduction</div>
+            <h2 id="project-intro-title">From language to verified demonstrations.</h2>
+            <p>This short overview explains the motivation, the five-stage LADDER pipeline, and how affordance knowledge becomes executable robot data.</p>
+            <ul>
+              <li>Knowledge construction and task decomposition</li>
+              <li>Affordance grounding and collision-aware execution</li>
+              <li>Verified demonstrations for downstream policy learning</li>
+            </ul>
+            <div class="intro-duration">About 89 seconds · English subtitles · no voiceover</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>A structured route from instruction to interaction.</h2>
+          <p class="section-intro">Robot demonstration collection is often bottlenecked by manual affordance labeling, task-specific reward design, and brittle planning. LADDER makes the intermediate structure explicit so that the simulator can execute and verify the resulting plan.</p>
+        </div>
+        <div class="two-col">
+          <article class="info-card">
+            <div class="card-kicker">The problem</div>
+            <h3>Collection pipelines need more than a robot and a scene.</h3>
+            <p>Large-scale synthetic data is useful only when the robot can repeatedly reach the functional part of an object, execute the intended interaction, and retain trajectories that satisfy task criteria.</p>
+            <ul>
+              <li>Manual affordance annotations do not scale with asset libraries.</li>
+              <li>Reward shaping and skill learning add a task-by-task cost.</li>
+              <li>Language-only plans can miss object identity and geometry.</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <div class="card-kicker">The idea</div>
+            <h3>Represent the interaction before planning the motion.</h3>
+            <p>LADDER encodes each asset as a parameterized instance, formulates affordances as functions of geometric and kinematic parameters, and maps those affordances to the live scene before motion planning.</p>
+            <ul>
+              <li>Continuous feasible pose regions replace isolated labels.</li>
+              <li>Asset IDs keep repeated objects unambiguous.</li>
+              <li>Waypoints connect semantic interaction points to execution.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="pipeline">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Five steps, one collection loop.</h2>
+          <p class="section-intro">The workflow separates semantic reasoning from geometric execution, while keeping a structured configuration as the interface between the two.</p>
+        </div>
+        <div class="pipeline">
+          <article class="step"><div class="step-no">01</div><h3>Knowledge construction</h3><p>Build parameterized instances from geometric primitives and kinematic parameters; derive affordance regions and functions.</p></article>
+          <article class="step"><div class="step-no">02</div><h3>Task decomposition</h3><p>Asset and planning agents extract categories and affordances, match them, order atomic tasks, and repair invalid plans.</p></article>
+          <article class="step"><div class="step-no">03</div><h3>Scene construction</h3><p>Import category-matched assets into Isaac Lab and randomize pose, appearance, lighting, camera, mass, and friction.</p></article>
+          <article class="step"><div class="step-no">04</div><h3>Affordance grounding</h3><p>Use the target asset’s live 6D pose to transform an affordance region and expand it into contact and motion waypoints.</p></article>
+          <article class="step"><div class="step-no">05</div><h3>Task execution</h3><p>Plan collision-aware trajectories with CuRobo, execute gripper commands, verify success, and record the demonstration.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="demonstrations">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Demonstrations</h2>
+          <p class="section-intro">These 50 simulator executions make the collection pipeline tangible: the same grounded affordances that drive planning are used to produce verified demonstrations. Posters keep the gallery lightweight; each video loads only as it approaches the viewport.</p>
+        </div>
+        <div class="demo-intro">
+          <div class="demo-stat"><strong>50</strong><span>demonstration clips</span></div>
+          <div class="demo-stat"><strong>10:01</strong><span>total runtime</span></div>
+          <div class="demo-stat"><strong>16:9</strong><span>consistent source format</span></div>
+        </div>
+        <div class="demo-groups">
+          <div class="demo-group">
+            <div class="demo-group-heading"><div><span class="eyebrow">Manipulation</span><h3>Representative tabletop manipulation</h3></div><p>Object picking, placement, and scene rearrangement demonstrations.</p></div>
+            <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/dump_bin_bigbin.jpg" data-src="videos/dump_bin_bigbin.mp4" aria-label="Dump bin into big bin demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Dump bin into big bin</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/move_can_pot.jpg" data-src="videos/move_can_pot.mp4" aria-label="Move can to pot demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Move can to pot</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/move_pillbottle_pad.jpg" data-src="videos/move_pillbottle_pad.mp4" aria-label="Move pill bottle to pad demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Move pill bottle to pad</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/move_playingcards_away.jpg" data-src="videos/move_playingcards_away.mp4" aria-label="Move playing cards away demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Move playing cards away</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/move_stapler_pad.jpg" data-src="videos/move_stapler_pad.mp4" aria-label="Move stapler to pad demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Move stapler to pad</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/pick_diverse_bottles.jpg" data-src="videos/pick_diverse_bottles.mp4" aria-label="Pick diverse bottles demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Pick diverse bottles</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/pick_dual_bottles.jpg" data-src="videos/pick_dual_bottles.mp4" aria-label="Pick dual bottles demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Pick dual bottles</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_bread_basket.jpg" data-src="videos/place_bread_basket.mp4" aria-label="Place bread in basket demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place bread in basket</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_bread_skillet.jpg" data-src="videos/place_bread_skillet.mp4" aria-label="Place bread in skillet demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place bread in skillet</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_burger_fries.jpg" data-src="videos/place_burger_fries.mp4" aria-label="Place burger and fries demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place burger and fries</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_can_basket.jpg" data-src="videos/place_can_basket.mp4" aria-label="Place can in basket demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place can in basket</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_cans_plasticbox.jpg" data-src="videos/place_cans_plasticbox.mp4" aria-label="Place cans in plastic box demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place cans in plastic box</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_container_plate.jpg" data-src="videos/place_container_plate.mp4" aria-label="Place container on plate demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place container on plate</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_dual_shoes.jpg" data-src="videos/place_dual_shoes.mp4" aria-label="Place dual shoes demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place dual shoes</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_empty_cup.jpg" data-src="videos/place_empty_cup.mp4" aria-label="Place empty cup demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place empty cup</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_fan.jpg" data-src="videos/place_fan.mp4" aria-label="Place fan demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place fan</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_mouse_pad.jpg" data-src="videos/place_mouse_pad.mp4" aria-label="Place mouse on pad demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place mouse on pad</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_object_basket.jpg" data-src="videos/place_object_basket.mp4" aria-label="Place object in basket demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place object in basket</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_object_scale.jpg" data-src="videos/place_object_scale.mp4" aria-label="Place object on scale demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place object on scale</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_object_stand.jpg" data-src="videos/place_object_stand.mp4" aria-label="Place object on stand demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place object on stand</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_phone_stand.jpg" data-src="videos/place_phone_stand.mp4" aria-label="Place phone on stand demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place phone on stand</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_shoe.jpg" data-src="videos/place_shoe.mp4" aria-label="Place shoe demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place shoe</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/put_bottles_dustbin.jpg" data-src="videos/put_bottles_dustbin.mp4" aria-label="Put bottles in dustbin demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Put bottles in dustbin</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/put_object-cabinet.jpg" data-src="videos/put_object-cabinet.mp4" aria-label="Put object in cabinet demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Manipulation</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Put object in cabinet</h3>
+            </div>
+          </article>
+            </div>
+          </div>
+          <div class="demo-group">
+            <div class="demo-group-heading"><div><span class="eyebrow">Contact</span><h3>Contact-rich interactions</h3></div><p>Articulated-object and tool-use demonstrations grounded in affordance geometry.</p></div>
+            <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/adjust_bottle.jpg" data-src="videos/adjust_bottle.mp4" aria-label="Adjust bottle demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Adjust bottle</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/beat_block_hammer.jpg" data-src="videos/beat_block_hammer.mp4" aria-label="Beat block with hammer demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Beat block with hammer</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/click_alarmclock.jpg" data-src="videos/click_alarmclock.mp4" aria-label="Click alarm clock demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Click alarm clock</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/click_bell.jpg" data-src="videos/click_bell.mp4" aria-label="Click bell demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Click bell</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/grab_roller.jpg" data-src="videos/grab_roller.mp4" aria-label="Grab roller demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Grab roller</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/handover_block.jpg" data-src="videos/handover_block.mp4" aria-label="Handover block demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Handover block</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/handover_mic.jpg" data-src="videos/handover_mic.mp4" aria-label="Handover microphone demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Handover microphone</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/hanging_mug.jpg" data-src="videos/hanging_mug.mp4" aria-label="Hang mug demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Hang mug</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/lift_pot.jpg" data-src="videos/lift_pot.mp4" aria-label="Lift pot demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Lift pot</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/open_laptop.jpg" data-src="videos/open_laptop.mp4" aria-label="Open laptop demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Open laptop</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/open_microwave.jpg" data-src="videos/open_microwave.mp4" aria-label="Open microwave demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Open microwave</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/press_stapler.jpg" data-src="videos/press_stapler.mp4" aria-label="Press stapler demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Press stapler</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/rotate_QRcode.jpg" data-src="videos/rotate_QRcode.mp4" aria-label="Rotate QR code demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Rotate QR code</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/scan_object.jpg" data-src="videos/scan_object.mp4" aria-label="Scan object demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Scan object</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/shake_bottle.jpg" data-src="videos/shake_bottle.mp4" aria-label="Shake bottle demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Shake bottle</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/shake_bottle_horizontally.jpg" data-src="videos/shake_bottle_horizontally.mp4" aria-label="Shake bottle horizontally demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Shake bottle horizontally</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/stamp_seal.jpg" data-src="videos/stamp_seal.mp4" aria-label="Stamp seal demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Stamp seal</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/turn_switch.jpg" data-src="videos/turn_switch.mp4" aria-label="Turn switch demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Contact</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Turn switch</h3>
+            </div>
+          </article>
+            </div>
+          </div>
+          <div class="demo-group">
+            <div class="demo-group-heading"><div><span class="eyebrow">Coordination</span><h3>Ordering and multi-object coordination</h3></div><p>Demonstrations that test ranking, ordering, and spatial coordination.</p></div>
+            <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/blocks_ranking_RGB.jpg" data-src="videos/blocks_ranking_RGB.mp4" aria-label="Rank blocks by color demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Rank blocks by color</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/blocks_ranking_size.jpg" data-src="videos/blocks_ranking_size.mp4" aria-label="Rank blocks by size demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Rank blocks by size</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_A2B_left.jpg" data-src="videos/place_A2B_left.mp4" aria-label="Place A to B · left demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place A to B · left</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/place_A2B_right.jpg" data-src="videos/place_A2B_right.mp4" aria-label="Place A to B · right demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Place A to B · right</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/stack_blocks_three.jpg" data-src="videos/stack_blocks_three.mp4" aria-label="Stack three blocks demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Stack three blocks</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/stack_blocks_two.jpg" data-src="videos/stack_blocks_two.mp4" aria-label="Stack two blocks demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Stack two blocks</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/stack_bowls_three.jpg" data-src="videos/stack_bowls_three.mp4" aria-label="Stack three bowls demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Stack three bowls</h3>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-media">
+              <video class="lazy-video" controls preload="none" playsinline poster="videos/posters/stack_bowls_two.jpg" data-src="videos/stack_bowls_two.mp4" aria-label="Stack two bowls demonstration"></video>
+            </div>
+            <div class="demo-card-body">
+              <div class="demo-meta"><span class="demo-tag">Coordination</span><span>640 × 368 · 100 fps</span></div>
+              <h3>Stack two bowls</h3>
+            </div>
+          </article>
+            </div>
+          </div>
+        </div>
+        <p class="demo-note">All clips are presented as recorded simulator demonstrations for qualitative inspection; the quantitative results above use the benchmark protocols described in the paper.</p>
+      </div>
+    </section>
+    <section id="results">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Higher collection yield across two task families.</h2>
+          <p class="section-intro">The collection experiments cover 50 rigid-body tasks from RoboTwin 2.0 and 50 articulated tasks from RoboGen. Success rate denotes the fraction of attempted executions retained as valid demonstrations.</p>
+        </div>
+        <div class="result-grid">
+          <article class="result-card">
+            <h3>RoboTwin 2.0 · rigid-body</h3>
+            <p>Average demonstration-collection success rate over 50 tasks.</p>
+            <div class="bar-row"><span>RoboTwin</span><div class="track"><div class="fill base" style="width:78.8%"></div></div><strong>78.8%</strong></div>
+            <div class="bar-row"><span>LADDER</span><div class="track"><div class="fill" style="width:94.2%"></div></div><strong>94.2%</strong></div>
+            <div class="legend"><span><i class="base"></i>official pipeline</span><span><i></i>LADDER</span></div>
+          </article>
+          <article class="result-card">
+            <h3>RoboGen · articulated</h3>
+            <p>Average demonstration-collection success rate over 50 tasks.</p>
+            <div class="bar-row"><span>RoboGen</span><div class="track"><div class="fill base" style="width:74.5%"></div></div><strong>74.5%</strong></div>
+            <div class="bar-row"><span>LADDER</span><div class="track"><div class="fill" style="width:89.5%"></div></div><strong>89.5%</strong></div>
+            <div class="legend"><span><i class="base"></i>RoboGen</span><span><i></i>LADDER</span></div>
+          </article>
+        </div>
+        <div class="policy-table-wrap">
+          <table>
+            <thead><tr><th>Policy</th><th>Clean · RT</th><th>Clean · LADDER</th><th>Hard · RT</th><th>Hard · LADDER</th></tr></thead>
+            <tbody>
+              <tr><td>π<sub>0.5</sub></td><td>70.6%</td><td><strong>77.1%</strong></td><td>46.0%</td><td><strong>54.4%</strong></td></tr>
+              <tr><td>DP3</td><td>55.24%</td><td><strong>64.34%</strong></td><td>4.96%</td><td><strong>8.46%</strong></td></tr>
+              <tr><td>X-VLA</td><td>68.0%</td><td><strong>73.8%</strong></td><td>20.9%</td><td><strong>29.0%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fineprint">Policy results use 50 demonstrations per task and the official RoboTwin 2.0 clean/hard evaluation protocols. RT denotes the same architecture trained on RoboTwin 2.0 expert data.</p>
+      </div>
+    </section>
+
+
+    <section id="details">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Designed for verification and reuse.</h2>
+          <p class="section-intro">The method exposes the interfaces that matter for scalable collection: what the language workflow emits, what the knowledge base supplies, and what the execution loop records.</p>
+        </div>
+        <div class="details">
+          <div class="detail"><strong>Structured output</strong><span>Task name, asset categories, unique IDs, affordance atoms, parameters, and execution order.</span></div>
+          <div class="detail"><strong>Local validation</strong><span>Category membership, affordance compatibility, ID references, unused assets, and bimanual simultaneity.</span></div>
+          <div class="detail"><strong>Motion grounding</strong><span>Approach, contact, gripper, retreat, hinge-arc, and slider waypoints derived from live object poses.</span></div>
+          <div class="detail"><strong>Collision handling</strong><span>Simulator collision geometries are converted into obstacles; grasped parts are treated as attached links after contact.</span></div>
+          <div class="detail"><strong>Recorded signals</strong><span>Proprioception, end-effector poses, gripper states, and camera observations for downstream training.</span></div>
+          <div class="detail"><strong>Evaluation boundary</strong><span>Privileged simulator state is used to generate demonstrations; learned policies are evaluated from benchmark observations.</span></div>
+        </div>
+        <div class="closing" style="margin-top: 62px;">
+          <div>
+            <div class="eyebrow">Research overview</div>
+            <p>LADDER connects language-level task structure with geometry-aware robot execution so that successful simulation demonstrations become reusable supervision for policy learning.</p>
+          </div>
+          <div class="release-note">Code and supplementary resources will be released after the review process. No author identities are included on this page.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="shell"><span>LADDER · Anonymous ICLR 2027 project page</span><span>Double-blind review version</span></div>
+  </footer>
+  <script>
+    (() => {
+      const videos = [...document.querySelectorAll('video[data-src]')];
+      const loadVideo = (video) => {
+        if (!video.src) {
+          video.src = video.dataset.src;
+          video.removeAttribute('data-src');
+        }
+      };
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadVideo(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '480px 0px' });
+        videos.forEach((video) => observer.observe(video));
+      } else {
+        videos.forEach(loadVideo);
+      }
+    })();
+  </script>
+</body>
+</html><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Anonymous project page for LADDER: Language and Affordance Driven Demonstration Engine for Robots." />
+  <title>LADDER · Anonymous project page</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307111f'/%3E%3Cpath d='M16 17h10v30H16zm15 0h17v8H39v22H31z' fill='%23f4a261'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --ink: #eaf1f7;
+      --muted: #9aabbd;
+      --dim: #6d7e90;
+      --bg: #07111f;
+      --panel: #0d1a2b;
+      --panel-2: #102238;
+      --line: rgba(184, 207, 227, .16);
+      --line-strong: rgba(184, 207, 227, .3);
+      --accent: #f4a261;
+      --accent-2: #61c5b5;
+      --accent-3: #7aa7ff;
+      --good: #b5e48c;
+      --max: 1160px;
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
